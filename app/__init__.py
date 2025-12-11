@@ -1,0 +1,2 @@
+"""Semantic Detection Service Application"""
+

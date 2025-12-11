@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  semantic-detection-service:
+    build: .
+    container_name: semantic-detection-service
+    ports:
+      - "8001:8001"
+    environment:
+      - EMBEDDING_MODEL=microsoft/codebert-base
+      - SIMILARITY_THRESHOLD=0.7
+      - AUTONOMY_THRESHOLD=50
+      - LOG_LEVEL=INFO
+      - MAX_WORKERS=4
+    volumes:
+      - ./vector_databases:/app/vector_databases
+      - ./temp_codebases:/app/temp_codebases
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 60s
+

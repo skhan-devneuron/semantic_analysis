@@ -1,0 +1,24 @@
+# Embedding and ML (not in main requirements)
+sentence-transformers>=2.3.0
+torch>=2.0.0
+transformers>=4.35.0
+tokenizers>=0.22.0,<=0.23.0
+huggingface_hub>=0.20.0
+numpy>=1.24.0,<2.0.0
+
+# Vector database (not in main requirements)
+pinecone>=3.0.0
+
+# Utilities (not in main requirements)
+httpx==0.25.2
+
+# Code parsing (not in main requirements)
+tree-sitter>=0.20.0
+
+# Logging (not in main requirements)
+python-json-logger==2.0.7
+
+# Gemini AI (not in main requirements)
+google-generativeai>=0.3.0
+python-dotenv
+
